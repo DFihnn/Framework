@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using Framework.Windows.Utilities;
+using Framework.Extensions;
 
 namespace Framework.Windows.Extensions
 {
@@ -48,7 +48,7 @@ namespace Framework.Windows.Extensions
       var height = renderSize.Height;
       var rect2 = new Rect(0.0, 0.0, width, height);
       rect2.Intersect(rect);
-      return !LayoutDoubleUtilities.AreClose(rect, rect2);
+      return !rect.AreClose(rect2);
     }
 
     public static bool IsTrimmed(this UIElement element)
